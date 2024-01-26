@@ -1,0 +1,872 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* WinkyBlinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WinkyBlinkTests.m */; };
+		09AFB07D2ACDC5AF0058D315 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09AFB07C2ACDC5AF0058D315 /* GoogleService-Info.plist */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1BBDFF1B6E3D49D3B30AF1BF /* AvenirNextLTPro-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D397405044141399B6226B3 /* AvenirNextLTPro-Heavy.otf */; };
+		5600FD4A67414C77B9331A01 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDD0C340981B4048837516B9 /* AvenirNextLTPro-UltLtCn.otf */; };
+		6B375508BFF1596E2FA81EA7 /* Pods_WinkyBlink_WinkyBlinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B94A327650E4D485D54BC0 /* Pods_WinkyBlink_WinkyBlinkTests.framework */; };
+		6FC47D97794841198B072496 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 737C2B890B05488E8F340A6B /* AvenirNextLTPro-Demi.otf */; };
+		7677DBA3DCD14328942A6D55 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4B330B3BEA409881CED708 /* AvenirNextLTPro-Regular.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		909142E1773F4D1C94F1D0AC /* AvenirNextLTPro-Cn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C12CB76DC6D4B5498A245DC /* AvenirNextLTPro-Cn.otf */; };
+		92E9EA7F2028480A858EF667 /* AvenirNextLTPro-CnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C72BC988BB24CD18ADC13A4 /* AvenirNextLTPro-CnIt.otf */; };
+		9BB862BD20AF470A94066B9E /* AvenirNextLTPro-HeavyCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F1B5A816B874C119E7CF767 /* AvenirNextLTPro-HeavyCnIt.otf */; };
+		9C976FB417D843509637E54F /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8F98A6505B4470191BBBED7 /* AvenirNextLTPro-It.otf */; };
+		9E44541D401049C6A4E86790 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A984B1228BA741B7A6B903FB /* BebasNeue-Regular.ttf */; };
+		A484925FA695409AA78656A6 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55F3A0B9891645A0B950FA14 /* AvenirNextLTPro-Bold.otf */; };
+		A91F4E4EA84A45C6A41E2250 /* FONTSFREE-NET-AUGUST-BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 11985CE91FA74D04B31A6B85 /* FONTSFREE-NET-AUGUST-BOLD.TTF */; };
+		AF82CB855847A492C50B8219 /* Pods_WinkyBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F01AD492A883F90C45B7A /* Pods_WinkyBlink.framework */; };
+		B0946A45141E4E77B12F7644 /* AvenirNextLTPro-DemiCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAFA8E7752E34C13A42D5C25 /* AvenirNextLTPro-DemiCnIt.otf */; };
+		BE0FAA1B83C74E9787E36E3D /* AvenirNextLTPro-UltLtIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DBE22C9F18F4EE18F3BC0E5 /* AvenirNextLTPro-UltLtIt.otf */; };
+		BE18FA840D974222A5428BB6 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 259DCD3E9DA547F29E312FC0 /* AvenirNextLTPro-UltLtCnIt.otf */; };
+		C07C874A591749B08DF6A881 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11AFF2E80374423DB86B586E /* AvenirNextLTPro-HeavyCn.otf */; };
+		C12A682CF7E14CEC975C2BCC /* AvenirNextLTPro-DemiCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD2CC0801ECB47D09375CC21 /* AvenirNextLTPro-DemiCn.otf */; };
+		D043F8F4802043D48CA81C9B /* AvenirNextLTPro-MediumCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 834EA6309BAD4EA3BB487223 /* AvenirNextLTPro-MediumCnIt.otf */; };
+		D4366BA47DF04EB595379384 /* AvenirNextLTPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83CC598651B940AA9A80404E /* AvenirNextLTPro-BoldIt.otf */; };
+		DA3247B2ECF248089BFE356C /* AvenirNextLTPro-MediumCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F65173C7FEFB46B9BDF4B847 /* AvenirNextLTPro-MediumCn.otf */; };
+		E0F00CC2573E42009F78793E /* AvenirNextLTPro-MediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BED189DA4A14642A1527090 /* AvenirNextLTPro-MediumIt.otf */; };
+		EA0B3859E96D45168A7ADD7D /* AvenirNextLTPro-BoldCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F300F89F7144E61AE05656B /* AvenirNextLTPro-BoldCn.otf */; };
+		F0B51D82BAA4468AB11279E0 /* AvenirNextLTPro-HeavyIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0153267F9A70485CA0C03246 /* AvenirNextLTPro-HeavyIt.otf */; };
+		F0B7384F19394C5784C16B82 /* AvenirNextLTPro-DemiIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B6589C849D94EBBAD8C22CB /* AvenirNextLTPro-DemiIt.otf */; };
+		F3634046C93B44828D1DD1B0 /* AvenirNextLTPro-UltLt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5743B04798004EBEB7CCEEE0 /* AvenirNextLTPro-UltLt.otf */; };
+		F5C37196142F4580A0664F8A /* AvenirNextLTPro-BoldCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55322DBA9CBC452B8FACF0C8 /* AvenirNextLTPro-BoldCnIt.otf */; };
+		FB803917362F46A1AEF556BB /* AvenirNextLTPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 737642CCDD5E4226A634F128 /* AvenirNextLTPro-Medium.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = WinkyBlink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* WinkyBlinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinkyBlinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* WinkyBlinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WinkyBlinkTests.m; sourceTree = "<group>"; };
+		0153267F9A70485CA0C03246 /* AvenirNextLTPro-HeavyIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyIt.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyIt.otf"; sourceTree = "<group>"; };
+		09AFB07B2ACDC49A0058D315 /* WinkyBlink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WinkyBlink.entitlements; path = WinkyBlink/WinkyBlink.entitlements; sourceTree = "<group>"; };
+		09AFB07C2ACDC5AF0058D315 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F300F89F7144E61AE05656B /* AvenirNextLTPro-BoldCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldCn.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldCn.otf"; sourceTree = "<group>"; };
+		11985CE91FA74D04B31A6B85 /* FONTSFREE-NET-AUGUST-BOLD.TTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FONTSFREE-NET-AUGUST-BOLD.TTF"; path = "../assets/fonts/FONTSFREE-NET-AUGUST-BOLD.TTF"; sourceTree = "<group>"; };
+		11AFF2E80374423DB86B586E /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyCn.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* WinkyBlink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinkyBlink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WinkyBlink/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = WinkyBlink/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WinkyBlink/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WinkyBlink/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WinkyBlink/main.m; sourceTree = "<group>"; };
+		259DCD3E9DA547F29E312FC0 /* AvenirNextLTPro-UltLtCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtCnIt.otf"; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-WinkyBlink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkyBlink.debug.xcconfig"; path = "Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink.debug.xcconfig"; sourceTree = "<group>"; };
+		3C12CB76DC6D4B5498A245DC /* AvenirNextLTPro-Cn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Cn.otf"; path = "../assets/fonts/AvenirNextLTPro-Cn.otf"; sourceTree = "<group>"; };
+		3DBE22C9F18F4EE18F3BC0E5 /* AvenirNextLTPro-UltLtIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtIt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtIt.otf"; sourceTree = "<group>"; };
+		4B5F01AD492A883F90C45B7A /* Pods_WinkyBlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkyBlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D397405044141399B6226B3 /* AvenirNextLTPro-Heavy.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Heavy.otf"; path = "../assets/fonts/AvenirNextLTPro-Heavy.otf"; sourceTree = "<group>"; };
+		55322DBA9CBC452B8FACF0C8 /* AvenirNextLTPro-BoldCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldCnIt.otf"; sourceTree = "<group>"; };
+		55F3A0B9891645A0B950FA14 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Bold.otf"; path = "../assets/fonts/AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-WinkyBlink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkyBlink.release.xcconfig"; path = "Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink.release.xcconfig"; sourceTree = "<group>"; };
+		5743B04798004EBEB7CCEEE0 /* AvenirNextLTPro-UltLt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLt.otf"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-WinkyBlink-WinkyBlinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkyBlink-WinkyBlinkTests.debug.xcconfig"; path = "Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BED189DA4A14642A1527090 /* AvenirNextLTPro-MediumIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumIt.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumIt.otf"; sourceTree = "<group>"; };
+		6C72BC988BB24CD18ADC13A4 /* AvenirNextLTPro-CnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-CnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-CnIt.otf"; sourceTree = "<group>"; };
+		737642CCDD5E4226A634F128 /* AvenirNextLTPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Medium.otf"; path = "../assets/fonts/AvenirNextLTPro-Medium.otf"; sourceTree = "<group>"; };
+		737C2B890B05488E8F340A6B /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Demi.otf"; path = "../assets/fonts/AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WinkyBlink/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		834EA6309BAD4EA3BB487223 /* AvenirNextLTPro-MediumCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumCnIt.otf"; sourceTree = "<group>"; };
+		83CC598651B940AA9A80404E /* AvenirNextLTPro-BoldIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldIt.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldIt.otf"; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-WinkyBlink-WinkyBlinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkyBlink-WinkyBlinkTests.release.xcconfig"; path = "Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F1B5A816B874C119E7CF767 /* AvenirNextLTPro-HeavyCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyCnIt.otf"; sourceTree = "<group>"; };
+		91B94A327650E4D485D54BC0 /* Pods_WinkyBlink_WinkyBlinkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkyBlink_WinkyBlinkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6589C849D94EBBAD8C22CB /* AvenirNextLTPro-DemiIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiIt.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiIt.otf"; sourceTree = "<group>"; };
+		9D4B330B3BEA409881CED708 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Regular.otf"; path = "../assets/fonts/AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
+		A8F98A6505B4470191BBBED7 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-It.otf"; path = "../assets/fonts/AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		A984B1228BA741B7A6B903FB /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BebasNeue-Regular.ttf"; path = "../assets/fonts/BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		AAFA8E7752E34C13A42D5C25 /* AvenirNextLTPro-DemiCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiCnIt.otf"; sourceTree = "<group>"; };
+		CD2CC0801ECB47D09375CC21 /* AvenirNextLTPro-DemiCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiCn.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiCn.otf"; sourceTree = "<group>"; };
+		DDD0C340981B4048837516B9 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtCn.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F65173C7FEFB46B9BDF4B847 /* AvenirNextLTPro-MediumCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumCn.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumCn.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B375508BFF1596E2FA81EA7 /* Pods_WinkyBlink_WinkyBlinkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF82CB855847A492C50B8219 /* Pods_WinkyBlink.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* WinkyBlinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* WinkyBlinkTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = WinkyBlinkTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08140F70E5414F2FA3AB5F61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				55F3A0B9891645A0B950FA14 /* AvenirNextLTPro-Bold.otf */,
+				0F300F89F7144E61AE05656B /* AvenirNextLTPro-BoldCn.otf */,
+				55322DBA9CBC452B8FACF0C8 /* AvenirNextLTPro-BoldCnIt.otf */,
+				83CC598651B940AA9A80404E /* AvenirNextLTPro-BoldIt.otf */,
+				3C12CB76DC6D4B5498A245DC /* AvenirNextLTPro-Cn.otf */,
+				6C72BC988BB24CD18ADC13A4 /* AvenirNextLTPro-CnIt.otf */,
+				737C2B890B05488E8F340A6B /* AvenirNextLTPro-Demi.otf */,
+				CD2CC0801ECB47D09375CC21 /* AvenirNextLTPro-DemiCn.otf */,
+				AAFA8E7752E34C13A42D5C25 /* AvenirNextLTPro-DemiCnIt.otf */,
+				9B6589C849D94EBBAD8C22CB /* AvenirNextLTPro-DemiIt.otf */,
+				4D397405044141399B6226B3 /* AvenirNextLTPro-Heavy.otf */,
+				11AFF2E80374423DB86B586E /* AvenirNextLTPro-HeavyCn.otf */,
+				8F1B5A816B874C119E7CF767 /* AvenirNextLTPro-HeavyCnIt.otf */,
+				0153267F9A70485CA0C03246 /* AvenirNextLTPro-HeavyIt.otf */,
+				A8F98A6505B4470191BBBED7 /* AvenirNextLTPro-It.otf */,
+				737642CCDD5E4226A634F128 /* AvenirNextLTPro-Medium.otf */,
+				F65173C7FEFB46B9BDF4B847 /* AvenirNextLTPro-MediumCn.otf */,
+				834EA6309BAD4EA3BB487223 /* AvenirNextLTPro-MediumCnIt.otf */,
+				5BED189DA4A14642A1527090 /* AvenirNextLTPro-MediumIt.otf */,
+				9D4B330B3BEA409881CED708 /* AvenirNextLTPro-Regular.otf */,
+				5743B04798004EBEB7CCEEE0 /* AvenirNextLTPro-UltLt.otf */,
+				DDD0C340981B4048837516B9 /* AvenirNextLTPro-UltLtCn.otf */,
+				259DCD3E9DA547F29E312FC0 /* AvenirNextLTPro-UltLtCnIt.otf */,
+				3DBE22C9F18F4EE18F3BC0E5 /* AvenirNextLTPro-UltLtIt.otf */,
+				11985CE91FA74D04B31A6B85 /* FONTSFREE-NET-AUGUST-BOLD.TTF */,
+				A984B1228BA741B7A6B903FB /* BebasNeue-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* WinkyBlink */ = {
+			isa = PBXGroup;
+			children = (
+				09AFB07C2ACDC5AF0058D315 /* GoogleService-Info.plist */,
+				09AFB07B2ACDC49A0058D315 /* WinkyBlink.entitlements */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = WinkyBlink;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				4B5F01AD492A883F90C45B7A /* Pods_WinkyBlink.framework */,
+				91B94A327650E4D485D54BC0 /* Pods_WinkyBlink_WinkyBlinkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* WinkyBlink */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* WinkyBlinkTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				08140F70E5414F2FA3AB5F61 /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* WinkyBlink.app */,
+				00E356EE1AD99517003FC87E /* WinkyBlinkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-WinkyBlink.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-WinkyBlink.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-WinkyBlink-WinkyBlinkTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-WinkyBlink-WinkyBlinkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* WinkyBlinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WinkyBlinkTests" */;
+			buildPhases = (
+				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
+				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = WinkyBlinkTests;
+			productName = WinkyBlinkTests;
+			productReference = 00E356EE1AD99517003FC87E /* WinkyBlinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* WinkyBlink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "WinkyBlink" */;
+			buildPhases = (
+				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
+				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				574054B2A2E9B2D4F05A21ED /* [CP-User] [RNFB] Core Configuration */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WinkyBlink;
+			productName = WinkyBlink;
+			productReference = 13B07F961A680F5B00A75B9A /* WinkyBlink.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "WinkyBlink" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* WinkyBlink */,
+				00E356ED1AD99517003FC87E /* WinkyBlinkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A484925FA695409AA78656A6 /* AvenirNextLTPro-Bold.otf in Resources */,
+				EA0B3859E96D45168A7ADD7D /* AvenirNextLTPro-BoldCn.otf in Resources */,
+				09AFB07D2ACDC5AF0058D315 /* GoogleService-Info.plist in Resources */,
+				F5C37196142F4580A0664F8A /* AvenirNextLTPro-BoldCnIt.otf in Resources */,
+				D4366BA47DF04EB595379384 /* AvenirNextLTPro-BoldIt.otf in Resources */,
+				909142E1773F4D1C94F1D0AC /* AvenirNextLTPro-Cn.otf in Resources */,
+				92E9EA7F2028480A858EF667 /* AvenirNextLTPro-CnIt.otf in Resources */,
+				6FC47D97794841198B072496 /* AvenirNextLTPro-Demi.otf in Resources */,
+				C12A682CF7E14CEC975C2BCC /* AvenirNextLTPro-DemiCn.otf in Resources */,
+				B0946A45141E4E77B12F7644 /* AvenirNextLTPro-DemiCnIt.otf in Resources */,
+				F0B7384F19394C5784C16B82 /* AvenirNextLTPro-DemiIt.otf in Resources */,
+				1BBDFF1B6E3D49D3B30AF1BF /* AvenirNextLTPro-Heavy.otf in Resources */,
+				C07C874A591749B08DF6A881 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				9BB862BD20AF470A94066B9E /* AvenirNextLTPro-HeavyCnIt.otf in Resources */,
+				F0B51D82BAA4468AB11279E0 /* AvenirNextLTPro-HeavyIt.otf in Resources */,
+				9C976FB417D843509637E54F /* AvenirNextLTPro-It.otf in Resources */,
+				FB803917362F46A1AEF556BB /* AvenirNextLTPro-Medium.otf in Resources */,
+				DA3247B2ECF248089BFE356C /* AvenirNextLTPro-MediumCn.otf in Resources */,
+				D043F8F4802043D48CA81C9B /* AvenirNextLTPro-MediumCnIt.otf in Resources */,
+				E0F00CC2573E42009F78793E /* AvenirNextLTPro-MediumIt.otf in Resources */,
+				7677DBA3DCD14328942A6D55 /* AvenirNextLTPro-Regular.otf in Resources */,
+				F3634046C93B44828D1DD1B0 /* AvenirNextLTPro-UltLt.otf in Resources */,
+				5600FD4A67414C77B9331A01 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
+				BE18FA840D974222A5428BB6 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */,
+				BE0FAA1B83C74E9787E36E3D /* AvenirNextLTPro-UltLtIt.otf in Resources */,
+				A91F4E4EA84A45C6A41E2250 /* FONTSFREE-NET-AUGUST-BOLD.TTF in Resources */,
+				9E44541D401049C6A4E86790 /* BebasNeue-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		574054B2A2E9B2D4F05A21ED /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+		};
+		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WinkyBlink-WinkyBlinkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WinkyBlink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink/Pods-WinkyBlink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WinkyBlink-WinkyBlinkTests/Pods-WinkyBlink-WinkyBlinkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* WinkyBlinkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* WinkyBlink */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-WinkyBlink-WinkyBlinkTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WinkyBlinkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinkyBlink.app/WinkyBlink";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-WinkyBlink-WinkyBlinkTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = WinkyBlinkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinkyBlink.app/WinkyBlink";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-WinkyBlink.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WinkyBlink/WinkyBlink.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4LADPB369Y;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = WinkyBlink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WinkyBlink;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.winkyblink.ios;
+				PRODUCT_NAME = WinkyBlink;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WinkyBlink;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-WinkyBlink.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WinkyBlink/WinkyBlink.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4LADPB369Y;
+				INFOPLIST_FILE = WinkyBlink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WinkyBlink;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.winkyblink.ios;
+				PRODUCT_NAME = WinkyBlink;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WinkyBlink;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WinkyBlinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "WinkyBlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "WinkyBlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

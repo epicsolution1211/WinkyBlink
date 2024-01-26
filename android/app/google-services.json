@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1012302153983",
+    "project_id": "winkyblink-f3391",
+    "storage_bucket": "winkyblink-f3391.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012302153983:android:2e575c04b6ff46d239a4ca",
+        "android_client_info": {
+          "package_name": "com.winkyblink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012302153983-6on346ups3mc3jsjkiv188l73hmanu9l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winkyblink",
+            "certificate_hash": "524fc70e4db4a9e6ecbaa71cf704869e5620c84f"
+          }
+        },
+        {
+          "client_id": "1012302153983-gheic42p7dgv34al29g7t124bi9euovq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winkyblink",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1012302153983-47lk38ita4oqj48aqqcd8s3qr5veif0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5hLHEanMkEAE6s7lql4NFMC3_aLsjgWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012302153983-47lk38ita4oqj48aqqcd8s3qr5veif0d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1012302153983-ocnsd4tb4j7fv7h4i8i6cjla8d1jkcoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.winkyblink.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
