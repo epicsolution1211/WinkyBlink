@@ -210,7 +210,7 @@ function ConversationScreen({ navigation, route }) {
             //Filter chat log according to opponent user
             const dialog = result.dialogs.find((dialog) => dialog.type === QB.chat.DIALOG_TYPE.CHAT && dialog.occupantsIds.includes(parseInt(route.params.id)) && dialog.occupantsIds.includes(parseInt(global.qb_id)));
             
-            setUser(response.data.user)
+            setUser(response.data.user);
             setUserphoto(response.data.user.photos[0].photo);
             dialog !== undefined && setDialog(dialog)
             setLoading(false)
@@ -415,11 +415,10 @@ function ConversationScreen({ navigation, route }) {
     //send message to opponent
     const sendMessage = async (message) => {
         if (dialog !== null) {
-            setLoading(true)
+            setLoading(true);
             // LocalNotification();
             // send message when dialog exist.
-            // console.log("send",attachmentsfile)
-            console.log("send",attachmentsfile)
+            // console.log("send",attachmentsfile);
             await QB.chat.sendMessage({
                 // attachments : [{id:'fce3d990b5894f8abffc46463262a63100',type:'image'}], 
                 attachments:attachmentsfile,
@@ -493,7 +492,7 @@ function ConversationScreen({ navigation, route }) {
     //receive messages
     async function receivedNewMessage(event) {
     
-    await loadUser()
+    // await loadUser()
     const url = event.payload['attachments'] ? await QB.content.getPrivateURL({uid:event.payload['attachments'][0]['id']}) : null;
     setMessages(prevMessages => (GiftedChat.append(prevMessages, [{
         _id: event.payload.id,

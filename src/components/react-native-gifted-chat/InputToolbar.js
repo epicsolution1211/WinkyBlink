@@ -3,8 +3,9 @@ import { Image, Platform, View, TouchableOpacity, TextInput, Keyboard } from 're
 import { InputToolbar, Composer, Send, LoadEarlier } from 'react-native-gifted-chat';
 import Constants from '../../common/Constants';
 
-export const MessageInputBar = forwardRef(({ message_content,bottom, onSendPress, onCameraPress }, ref) => {
+export const MessageInputBar = forwardRef(({ bottom, onSendPress, onCameraPress }, ref) => {
     const [message, setMessage] = useState('')
+    const [recording,setRecording] = useState(false);
     return (
         <View
             style={{
@@ -30,6 +31,16 @@ export const MessageInputBar = forwardRef(({ message_content,bottom, onSendPress
                 <TouchableOpacity onPress={()=>onCameraPress(message)}>
                     <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/ic_chat_camera.png')} />
                 </TouchableOpacity>
+                {
+                    recording ? <TouchableOpacity onPress={()=>onRecorderPress(message)}>
+                    <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_off.png')} />
+                </TouchableOpacity> : <TouchableOpacity onPress={()=>onRecorderPress(message)}>
+                    <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_on.png')} />
+                </TouchableOpacity>
+                }
+                {/* <TouchableOpacity onPress={()=>onRecorderPress(message)}>
+                    <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_on.png')} />
+                </TouchableOpacity> */}
                 {/* <View style={{}}> <View/> */}
                 {/* <Image style={{ width: 28, height: 100, resizeMode: 'contain' }} src={'https://api.quickblox.com/blobs/fce3d990b5894f8abffc46463262a63100?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdHlwZSI6ImFwcGxpY2F0aW9uIiwiYXBwbGljYXRpb25faWQiOjEwMjQ4MCwiaWF0IjoxNzA2Mjc4MTA2MzA5NjEzfQ.EQOQNSuePwAHfCrtE0rJuzEAZDxfyMHWsqf6QPssgYNRZM1111p-jFz-vmpdaA-CbonHX9Q0C8A7YxWqL8zu1A'} /> */}
                 <TextInput

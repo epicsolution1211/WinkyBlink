@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Arrays;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-// import com.reactnativecommunity.rctaudiotoolkit.AudioPackage;
-// import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
+import com.reactnativecommunity.rctaudiotoolkit.AudioPackage;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 
 
 
@@ -29,8 +29,8 @@ public class MainActivity extends ReactActivity {
     return Arrays.<ReactPackage>asList(
       new MainReactPackage(),
       new RNGeocoderPackage(),
-      // new AudioPackage()
-      // new ReactNativePushNotificationPackage()
+      new AudioPackage(),
+      new ReactNativePushNotificationPackage()
     );
   }
 

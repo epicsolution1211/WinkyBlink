@@ -136,7 +136,7 @@ dependencies {
         implementation jscFlavor
     }
     implementation project(':react-native-geocoder')
-    implementation project(':@react-native-community_audio-toolkit')
+    implementation project(':react-native-community_audio-toolkit')
     implementation project(':react-native-audio-recorder-player')
     // implementation project(':react-native-push-notification')
 }
