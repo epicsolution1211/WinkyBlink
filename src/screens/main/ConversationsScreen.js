@@ -20,9 +20,11 @@ function ConversationsScreen({ navigation }) {
     const insets = useSafeAreaInsets()
     const [loading, setLoading] = useState(false)
     const [refreshing, setRefreshing] = useState(false)
-    const [dialogs, setDialogs] = useState([])
+    const [dialogs, setDialogs] = useState([]);
+    const [limit,setLimit] = useState(10);
     useEffect(() => {
-        loadConversations()
+        loadConversations();
+        setLimit(10);
         return () => { };
     }, []);
     useEffect(() => {
@@ -56,12 +58,32 @@ function ConversationsScreen({ navigation }) {
         return index
     }
     const onBackPress = () => navigation.goBack()
-    const onHomePress = () => navigation.navigate('TabHome')
+    const onHomePress = () => navigation.navigate('Home')
     const onMenuPress = () => navigation.openDrawer()
     const onRefresh = () => { loadConversations() }
     const loadConversations = async () => {
-        const result = await QB.chat.getDialogs({})
+
+        setLoading(true);
+        
+        const result = await QB.chat.getDialogs({limit: 10})
         setDialogs(result.dialogs)
+        
+        setLoading(false);
+    }
+    const loadmore = async (event) => {
+        const offsetY = event.nativeEvent.contentOffset.y;
+        const contentHeight = event.nativeEvent.contentSize.height;
+        const containerHeight = event.nativeEvent.layoutMeasurement.height;
+        const offsetFromBottom = contentHeight - offsetY - containerHeight;
+
+        if(offsetFromBottom <= 0){
+            setLoading(true)
+
+            loadConversations(limit+5);
+            setLimit(limit+5);
+            
+            setLoading(false)
+        }
     }
     return (
         <View style={{ flex: 1, backgroundColor: Constants.COLOR.WHITE }} >
@@ -81,6 +103,7 @@ function ConversationsScreen({ navigation }) {
                 data={dialogs}
                 refreshing={refreshing}
                 onRefresh={onRefresh}
+                onScroll={loadmore}
                 ItemSeparatorComponent={() => <View style={{ marginHorizontal: 20, opacity: 0.1, height: 0, backgroundColor: Constants.COLOR.BLACK }} />}
                 renderItem={({ item, index }) =>
                     <ConversationItem

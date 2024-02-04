@@ -37,10 +37,10 @@ function AboutMePhotoScreen({ navigation }) {
         }
     })
     const onNextPress = () => {
-        // if (pictures.length < 2) {
-        //     return presentToastMessage({ type: 'success', position: 'top', message: "Please upload at least 2 profile pictures." })
-        // }
-        // uploadImagesToS3()
+        if (pictures.length < 2) {
+            return presentToastMessage({ type: 'success', position: 'top', message: "Please upload at least 2 profile pictures." })
+        }
+        uploadImagesToS3()
 
         setTimeout(() => {
             navigation.push("MyPreferences")

@@ -3,7 +3,7 @@ import { Image, Platform, View, TouchableOpacity, TextInput, Keyboard } from 're
 import { InputToolbar, Composer, Send, LoadEarlier } from 'react-native-gifted-chat';
 import Constants from '../../common/Constants';
 
-export const MessageInputBar = forwardRef(({ bottom, onSendPress, onCameraPress }, ref) => {
+export const MessageInputBar = forwardRef(({ bottom, onSendPress, onCameraPress,onRecorderPress,onPausePress ,preview}, ref) => {
     const [message, setMessage] = useState('')
     const [recording,setRecording] = useState(false);
     return (
@@ -11,7 +11,9 @@ export const MessageInputBar = forwardRef(({ bottom, onSendPress, onCameraPress 
             style={{
                 backgroundColor: Constants.COLOR.BLUE_LIGHT,
                 width: Constants.LAYOUT.SCREEN_WIDTH,
-                height: 90 + bottom,
+                maxHeight: 200 + bottom,
+                minHeight:90 +bottom,
+                padding:10,
                 ...Platform.select({
                     ios: {
                         shadowColor: '#000',
@@ -31,16 +33,20 @@ export const MessageInputBar = forwardRef(({ bottom, onSendPress, onCameraPress 
                 <TouchableOpacity onPress={()=>onCameraPress(message)}>
                     <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/ic_chat_camera.png')} />
                 </TouchableOpacity>
-                {
-                    recording ? <TouchableOpacity onPress={()=>onRecorderPress(message)}>
+                { recording ? <TouchableOpacity onPress={()=>{onPausePress(message); setRecording(false)}}>
                     <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_off.png')} />
-                </TouchableOpacity> : <TouchableOpacity onPress={()=>onRecorderPress(message)}>
+                </TouchableOpacity> : 
+                <TouchableOpacity onPress={()=>{onRecorderPress(message); setRecording(true)}}>
                     <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_on.png')} />
+                </TouchableOpacity>}
+                
+                {preview ? <TouchableOpacity>
+                    <Image style={{ width: 50, height: 100, resizeMode: 'contain' }} src={preview} />
+                    {/* <View style={{ width: 20, height: 20, borderRadius: 12, backgroundColor: Constants.COLOR.WHITE, top: -20, right: -20 }}>
+                        <Image style={{ width: 20, height: 20, resizeMode: 'contain' }} source={require('../../../assets/images/ic_remove_pic.png')} />
+                    </View> */}
                 </TouchableOpacity>
-                }
-                {/* <TouchableOpacity onPress={()=>onRecorderPress(message)}>
-                    <Image style={{ width: 28, height: 25, resizeMode: 'contain' }} source={require('../../../assets/images/icon_speaker_on.png')} />
-                </TouchableOpacity> */}
+                : null}
                 {/* <View style={{}}> <View/> */}
                 {/* <Image style={{ width: 28, height: 100, resizeMode: 'contain' }} src={'https://api.quickblox.com/blobs/fce3d990b5894f8abffc46463262a63100?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdHlwZSI6ImFwcGxpY2F0aW9uIiwiYXBwbGljYXRpb25faWQiOjEwMjQ4MCwiaWF0IjoxNzA2Mjc4MTA2MzA5NjEzfQ.EQOQNSuePwAHfCrtE0rJuzEAZDxfyMHWsqf6QPssgYNRZM1111p-jFz-vmpdaA-CbonHX9Q0C8A7YxWqL8zu1A'} /> */}
                 <TextInput

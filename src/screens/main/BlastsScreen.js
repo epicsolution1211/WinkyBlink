@@ -27,7 +27,7 @@ function BlastsScreen({ navigation }) {
     const [visibleActivateModal, setVisibleActivateModal] = useState(false)
     const [blasts, setBlasts] = useState([])
     const [winkyblastscount, setwinkyblastscount] = useState(0);
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(7);
     const onBackPress = () => navigation.goBack()
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
@@ -37,11 +37,11 @@ function BlastsScreen({ navigation }) {
         setVisibleActivateModal(true)
     };
     const onViewMorePress = () => { 
-        console.log(limit);
+        // console.log(limit);
         // limit = limit +10;
         // setLimit(prevLimit => prevLimit + 10);
-        console.log(limit);
-        loadblasts(limit);
+        // console.log(limit);
+        // loadblasts(limit);
      }
 
     useFocusEffect(
@@ -52,16 +52,10 @@ function BlastsScreen({ navigation }) {
         }, [])
     );
     
-    // useFocusEffect(
-    //     React.useCallback(() => {
-    //         setLimit(10);
-    //       return () => {
-    //       };
-    //     }, [])
-    // );
     useFocusEffect(
         React.useCallback(() => {
             loadblasts(limit);
+            setLimit(7);
           return () => {
           };
         }, [])
@@ -121,13 +115,14 @@ function BlastsScreen({ navigation }) {
     const loadblasts = async (limit) =>{
         try {
             setLoading(true)
-            console.log("limit nu", limit)
+            // console.log("limit nu", limit)
             const response = await axios.get(`apis/load_blasts/${limit}`,{ 
                 headers: {
                     'Auth-Token': global.token
                 }
             });
             setBlasts(response.data.blasts);
+            
             console.log('load_blasts_success', response.data)
             setLoading(false)
         } catch (error) {
@@ -136,6 +131,24 @@ function BlastsScreen({ navigation }) {
             setTimeout(() => {
                 presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
             }, 100);
+        }
+    }
+
+    const loadmore = async (event) => {
+        const offsetY = event.nativeEvent.contentOffset.y;
+        const contentHeight = event.nativeEvent.contentSize.height;
+        const containerHeight = event.nativeEvent.layoutMeasurement.height;
+        const offsetFromBottom = contentHeight - offsetY - containerHeight;
+        // console.log(offsetFromBottom);
+        if(offsetFromBottom <= 0){
+            setLoading(true)
+
+            loadblasts(limit+1);
+            setLimit(limit + 1);
+            
+            setLoading(false)
+
+            // console.log(limit);
         }
     }
 
@@ -235,13 +248,14 @@ function BlastsScreen({ navigation }) {
                 data={blasts}
                 refreshing={refreshing}
                 onRefresh={onRefresh}
+                onScroll={loadmore}
                 ItemSeparatorComponent={() => <View style={{ marginHorizontal: 20, opacity: 0.1, height: 0, backgroundColor: Constants.COLOR.BLACK }} />}
                 renderItem={({ item, index }) =>
                     <BlastItem
                         item={item}
                         index={index}
                         layout={'big'}
-                        onUserPress={() => navigation.push('User', {id:item.user_id})}
+                        onUserPress={() => navigation.push('User', {id:item.user_id,usertype:'blast'})}
                         onBlastPress={() => { }} />}
                 keyExtractor={item => item.id}
                 ListFooterComponent={() => (

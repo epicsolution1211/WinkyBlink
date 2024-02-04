@@ -20,7 +20,6 @@ const BlastItem = ({ item, layout, index, onUserPress, onBlastPress }) => {
             const res = await Geocoder.geocodePosition(NY);
             setAdminarea(res[0].adminArea);
             setCountry(res[0].country);
-            // console.log("adminarea", res);
         } catch (error) {
             // console.log("getCityName error", error);
         }

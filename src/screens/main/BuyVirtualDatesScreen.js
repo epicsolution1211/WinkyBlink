@@ -17,7 +17,8 @@ function BuyVirtualDatesScreen({ navigation, route }) {
     const onBackPress = () => navigation.goBack()
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
-    const onBuyNowPress = () => navigation.push('CheckOut')
+    const onhalfBuyNowPress = () => navigation.push('CheckOut',{description:'Virtual Dates',price:14.99,type:'buy'})
+    const onhourBuyNowPress = () => navigation.push('CheckOut',{description:'Virtual Dates',price:29.99,type:'buy'})
     return (
         <View style={{ flex: 1, backgroundColor: Constants.COLOR.SECONDARY }} >
             <StatusBar barStyle={Platform.OS == 'ios' ? 'dark-content' : 'dark-content'} backgroundColor={Constants.COLOR.BLACK} />
@@ -44,12 +45,12 @@ function BuyVirtualDatesScreen({ navigation, route }) {
                     containerStyle={{ marginTop: 30, height: 77 }}
                     textStyle={{}}
                     title={"BUY A 30-MINUTE\nSESSION: $14.99"}
-                    onPress={onBuyNowPress} />
+                    onPress={onhalfBuyNowPress} />
                 <StyledButton
                     containerStyle={{ marginTop: 20, height: 77 }}
                     textStyle={{}}
                     title={"BUY A 60-MINUTE\nSESSION: $29.99"}
-                    onPress={onBuyNowPress} />
+                    onPress={onhourBuyNowPress} />
             </View>
         </View>
     )

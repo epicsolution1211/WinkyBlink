@@ -16,6 +16,7 @@ import BlastItem from '../../components/BlastItem';
 import MatchItem from '../../components/MatchItem';
 import { presentToastMessage } from '../../common/Functions';
 import axios from 'axios';
+import { useFocusEffect } from '@react-navigation/native';
 
 function MatchesScreen({ navigation }) {
     const insets = useSafeAreaInsets()
@@ -24,8 +25,9 @@ function MatchesScreen({ navigation }) {
     const [matches, setMatches] = useState([]);
     // const [blasts, setBlasts] = useState([{ id: '0' }, { id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }])
     const onBackPress = () => navigation.goBack()
-    const onHomePress = () => navigation.navigate('TabHome')
+    const onHomePress = () => navigation.navigate('Home')
     const onMenuPress = () => navigation.openDrawer()
+    const [limit,setLimit] = useState(10);
     const onRefresh = () => { }
     useEffect(() => {
         if (navigation !== undefined) {
@@ -42,22 +44,33 @@ function MatchesScreen({ navigation }) {
         return () => { };
     }, [navigation]);
 
-    useEffect(() => {
-        loadmatchs()
-        return () => { };
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            loadmatchs(limit);
+            setLimit(10);
+          return () => {
+          };
+        }, [])
+    );
 
-    const loadmatchs = async () =>{
+    // useEffect(() => {
+    //     loadmatchs()
+    //     return () => { };
+    // }, []);
+
+    const loadmatchs = async (limit) =>{
         try {
             setLoading(true)
-            
-            const response =  await axios.get('apis/load_matches/', {
+            // console.log(limit);
+            const response =  await axios.get(`apis/load_matches/${limit}`, {
                 headers: {
                     'Auth-Token': global.token
                 }
             })
-            
+            // console.log(response.data.matches)
+
             setMatches(response.data.matches);
+            console.log(matches)
             setLoading(false)
         } catch (error) {
             console.log('load_matches', error)
@@ -68,6 +81,19 @@ function MatchesScreen({ navigation }) {
         }
     }
 
+    const loadmore = async (event) => {
+        const offsetY = event.nativeEvent.contentOffset.y;
+        const contentHeight = event.nativeEvent.contentSize.height;
+        const containerHeight = event.nativeEvent.layoutMeasurement.height;
+        const offsetFromBottom = contentHeight - offsetY - containerHeight;
+        // console.log(offsetFromBottom);
+        if(offsetFromBottom <= 0){
+            setLoading(true)
+            loadmatchs(limit+1);
+            setLimit(limit+1);
+            setLoading(false)
+        }
+    }
 
     return (
         <View style={{ flex: 1, backgroundColor: Constants.COLOR.WHITE }} >
@@ -87,13 +113,14 @@ function MatchesScreen({ navigation }) {
                 data={matches}
                 refreshing={refreshing}
                 onRefresh={onRefresh}
+                onScroll={loadmore}
                 ItemSeparatorComponent={() => <View style={{ marginHorizontal: 20, opacity: 0.1, height: 0, backgroundColor: Constants.COLOR.BLACK }} />}
                 renderItem={({ item, index }) =>
                     <MatchItem
                         item={item}
                         index={index}
                         layout={'big'}
-                        onUserPress={() => navigation.push('User', {id:item.opponent_id})}
+                        onUserPress={() => navigation.push('User', {id:item.opponent_id,usertype:'match'})}
                         onBlastPress={() => { }} />}
                 keyExtractor={item => item.id}
             />

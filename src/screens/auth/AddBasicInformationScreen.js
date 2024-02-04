@@ -72,11 +72,12 @@ function AddBasicInformationScreen({ navigation, route }) {
                 'zip_code': zipCode,
                 'date_of_birth': moment(dateOfBirth).format('YYYY-MM-DD'),
                 'latitude':currentLatitude,
-                'longtide':currentLongtitude
+                'longtidue':currentLongtitude
             }
             if (route.params.name_required) {
                 parameters['name'] = name
             }
+            console.log(parameters);
             var body = [];
             for (let property in parameters) {
                 let encodedKey = encodeURIComponent(property);

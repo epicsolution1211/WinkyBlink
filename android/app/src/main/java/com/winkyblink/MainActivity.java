@@ -11,8 +11,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.reactnativecommunity.rctaudiotoolkit.AudioPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
-
-
+import com.rnfs.RNFSPackage;
+import com.facebook.react.shell.MainReactPackage;
+import com.killserver.screenshotprev.RNScreenshotPreventPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -30,7 +31,9 @@ public class MainActivity extends ReactActivity {
       new MainReactPackage(),
       new RNGeocoderPackage(),
       new AudioPackage(),
-      new ReactNativePushNotificationPackage()
+      new ReactNativePushNotificationPackage(),
+      new RNFSPackage(),
+      new RNScreenshotPreventPackage()
     );
   }
 

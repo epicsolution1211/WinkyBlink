@@ -112,11 +112,17 @@ function CreatePasswordScreen({ navigation, route }) {
                     presentToastMessage({ type: 'success', position: 'top', message: "That password is weak." })
                 }, 100);
             } else {
-                if(error != false)
+                
                 setTimeout(() => {
-                    presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                    presentToastMessage({ type: 'success', position: 'top', message:"Some problems occurred, please try again." })
                 }, 100);
             }
+            // else {
+            //     if(error != false)
+            //     setTimeout(() => {
+            //         presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+            //     }, 100);
+            // }
         }
     }
     const resetPassword = async () => {

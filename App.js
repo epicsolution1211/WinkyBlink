@@ -99,6 +99,7 @@ import QB from 'quickblox-react-native-sdk';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 import PushNotification from "react-native-push-notification";
+import RNPreventScreenshot, { addListener } from 'react-native-screenshot-prevent';
 
 
 
@@ -660,6 +661,25 @@ function NavigatorTab() {
 }
 
 function NavigatorDrawer() {
+    RNPreventScreenshot.enabled(true);
+    // if(!__DEV__) RNPreventScreenshot.enableSecureView();
+    // if(!__DEV__) RNPreventScreenshot.disableSecureView();
+    // addListener(fn);
+    // useEffect(() => {
+    //     const subscription = RNPreventScreenshot.addListener(() => {
+    //         console.log('Screenshot taken');
+    //         // showAlert({
+    //         //     title: 'Warning',
+    //         //     message: 'You have taken a screenshot of the app. This is prohibited due to security reasons.',
+    //         //     confirmText: 'I understand'
+    //         // });
+    //     })
+    
+    //     return () => {
+    //         subscription.remove();
+    //     }
+    // }, []);
+
     const { sessionClose } = React.useContext(AuthContext);
     const Stack = createDrawerNavigator();
     useEffect(() => {
@@ -1118,8 +1138,7 @@ function App({ navigation }) {
     const initQuickBlox = async () => {
         try {
             const qbinit = await QB.settings.init(Constants.QUICKBLOX_APP_SETTINGS)
-            await QB.settings.enableAutoReconnect({ enable: true })
-            // console.log("qbinit",qbinit);
+            await QB.settings.enableAutoReconnect({ enable: true });
             dispatch({ type: 'RESTORE_TOKEN', token: null });
         } catch (error) {
             console.log('init quickblox', JSON.stringify(error))

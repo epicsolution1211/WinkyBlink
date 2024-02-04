@@ -13,7 +13,7 @@ import java.util.List;
 // import com.reactnativecommunity.rctaudiotoolkit.AudioPackage;
 // import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 // import java.util.Arrays;
-// import com.facebook.react.shell.MainReactPackage;
+
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -38,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MainReactPackage());
+          // packages.add(new RNScreenshotPreventPackage());
           // packages.add(new ReactNativePushNotificationPackage());
           // packages.add(new RNAudioRecorderPlayerPackage());
           // packages.add(new AudioPackage());

@@ -16,15 +16,16 @@ import StyledPageControl from '../../components/StyledPageControl';
 function BuyWinkyBlastsScreen({ navigation, route }) {
     const insets = useSafeAreaInsets()
     const [packages, setPackages] = useState([
-        { id: '0', label: '1 WinkyBlast', icon: require('../../../assets/images/ic_winky_one.png'), price: 2.99, height: 58 },
-        { id: '1', label: '5 WinkyBlasts', icon: require('../../../assets/images/ic_winky_five.png'), price: 11.25, height: 81 },
-        { id: '2', label: '15 WinkyBlasts', icon: require('../../../assets/images/ic_winky_fifteen.png'), price: 22.50, height: 135 },
-        { id: '3', label: '25 WinkyBlasts', icon: require('../../../assets/images/ic_winky_twenty_five.png'), price: 31.25, height: 133 }])
+        { id: '0', label: '1 WinkyBlast', icon: require('../../../assets/images/ic_winky_one.png'), price: 2.99, height: 58 ,count:1},
+        { id: '1', label: '5 WinkyBlasts', icon: require('../../../assets/images/ic_winky_five.png'), price: 11.25, height: 81 ,count:5},
+        { id: '2', label: '15 WinkyBlasts', icon: require('../../../assets/images/ic_winky_fifteen.png'), price: 22.50, height: 135 ,count:15},
+        { id: '3', label: '25 WinkyBlasts', icon: require('../../../assets/images/ic_winky_twenty_five.png'), price: 31.25, height: 133 ,count:25}])
     const [currentPackageIndex, setCurrentPackageIndex] = useState(0)
     const onBackPress = () => navigation.goBack()
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
-    const onBuyNowPress = () => navigation.push('CheckOut')
+    const onBuyNowPress = () => navigation.push('CheckOut',{description:'WinkyBlasts',price:packages[currentPackageIndex].price, type:'buy',count:packages[currentPackageIndex].count})
+    console.log(packages[currentPackageIndex].price);
     const PackageItem = ({ item, index }) => {
         return (
             <View style={{ width: Constants.LAYOUT.SCREEN_WIDTH - 60, aspectRatio: 1.5, borderRadius: 12, backgroundColor: Constants.COLOR.WHITE, alignItems: 'center', justifyContent: 'center' }} >

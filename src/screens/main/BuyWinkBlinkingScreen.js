@@ -17,7 +17,7 @@ function BuyWinkBlinkingScreen({ navigation, route }) {
     const onBackPress = () => navigation.goBack()
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
-    const onBuyNowPress = () => navigation.push('CheckOut')
+    const onBuyNowPress = () => navigation.push('CheckOut',{description:'WinkBlinking',price:12.99,type:'subscription'})
     return (
         <View style={{ flex: 1, backgroundColor: Constants.COLOR.SECONDARY }} >
             <StatusBar barStyle={Platform.OS == 'ios' ? 'dark-content' : 'dark-content'} backgroundColor={Constants.COLOR.BLACK} />

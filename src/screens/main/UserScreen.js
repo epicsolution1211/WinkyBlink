@@ -43,12 +43,11 @@ function UserScreen({ navigation, route }) {
         return () => { };
     }, []);
     const onBackPress = () => navigation.goBack()
-    const onHomePress = () => navigation.navigate('TabHome')
+    const onHomePress = () => navigation.navigate('Home')
     const onMenuPress = () => navigation.openDrawer()
     const onMessagePress = () => {
         navigation.push('Conversation', { type: 'user', id: user.qb_id })
-    }
-
+    };
     const onBlastsend = async () =>{
         
         try{
@@ -74,8 +73,7 @@ function UserScreen({ navigation, route }) {
                 presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
             }, 100);
         }
-    } 
-
+    };
     const loadUser = async () => {
         try {
             setLoading(true)
@@ -84,6 +82,44 @@ function UserScreen({ navigation, route }) {
                     'Auth-Token': global.token
                 }
             })
+
+            if(route.params.usertype == 'match'){
+                try{    
+                setLoading(true);
+                await axios.post('apis/viewd_match_user/',{
+                    "opponent_id":route.params.id
+                }, {
+                    headers: {
+                        'Auth-Token': global.token
+                    }
+                })
+                setLoading(false);
+                }catch(error){
+                    console.log('viewed_match', JSON.stringify(error))
+                    setLoading(false)
+                    setTimeout(() => {
+                        presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                    }, 100);
+                }
+            }else if(route.params.usertype == 'blast'){
+                try{    
+                    setLoading(true);
+                    await axios.post('apis/viewd_blast_user/',{
+                        "opponent_id":route.params.id
+                    }, {
+                        headers: {
+                            'Auth-Token': global.token
+                        }
+                    })
+                    setLoading(false);
+                    }catch(error){
+                        console.log('viewed_blast', JSON.stringify(error))
+                        setLoading(false)
+                        setTimeout(() => {
+                            presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                        }, 100);
+                    }
+            }
             setUser(response.data.user)
             setLoading(false)
         } catch (error) {
@@ -95,6 +131,7 @@ function UserScreen({ navigation, route }) {
 
         }
     }
+    console.log(route.params.usertype)
     const PhotoItem = ({ item, index }) => {
         return (
             <View style={{}}>
@@ -198,9 +235,9 @@ function UserScreen({ navigation, route }) {
                                 {/* <TouchableOpacity  style={{}}>
                                     <Image style={{ width: 32, height: 33, resizeMode: 'contain' }} source={require('../../../assets/images/ic_undo.png')} />
                                 </TouchableOpacity> */}
-                                <TouchableOpacity onPress={onBlastsend} style={{}}>
+                                {route.params.usertype != 'match' && route.params.usertype!='conversation' ? <TouchableOpacity onPress={onBlastsend} style={{}}>
                                     <Image style={{ width: 47, height: 48, resizeMode: 'contain' }} source={require('../../../assets/images/ic_blast_wish_list.png')} />
-                                </TouchableOpacity>
+                                </TouchableOpacity> : null}
                             </View>
                             <StyledPageControl
                                 containerStyle={{ position: 'absolute', bottom: 20 }}
@@ -229,14 +266,17 @@ function UserScreen({ navigation, route }) {
                                 containerStyle={{ marginLeft: 20, marginTop: 10, marginBottom: 25, width: 135, height: 34, borderRadius: 3, paddingHorizontal: 0 }}
                                 textStyle={{ fontFamily: Constants.FONT_FAMILY.PRIMARY_DEMI, fontSize: Constants.FONT_SIZE.FT15, color: Constants.COLOR.WHITE }}
                                 title={`Level ${user.verification_level} verified`} />
+                            {
+                            route.params.usertype != 'blast' && route.params.usertype != 'swipeable' ?
                             <View style={{ position: 'absolute', marginTop: 40, right: 25, top: 25, alignItems: 'center' }}>
-                                <TouchableOpacity onPress={onMessagePress} style={{}}>
-                                    <Image style={{ width: 41, height: 41, resizeMode: 'contain' }} source={require('../../../assets/images/ic_message_me.png')} />
-                                </TouchableOpacity>
-                                <Text style={{ textAlign: 'center', marginTop: 4, fontFamily: Constants.FONT_FAMILY.PRIMARY_REGULAR, fontSize: Constants.FONT_SIZE.FT13, color: Constants.COLOR.BLACK }}>
-                                    {"Message\nme"}
-                                </Text>
-                            </View>
+                                    <TouchableOpacity onPress={onMessagePress} style={{}}>
+                                        <Image style={{ width: 41, height: 41, resizeMode: 'contain' }} source={require('../../../assets/images/ic_message_me.png')} />
+                                    </TouchableOpacity>
+                                    <Text style={{ textAlign: 'center', marginTop: 4, fontFamily: Constants.FONT_FAMILY.PRIMARY_REGULAR, fontSize: Constants.FONT_SIZE.FT13, color: Constants.COLOR.BLACK }}>
+                                        {"Message\nme"}
+                                    </Text>
+                                </View> : null
+                            }
                             <View style={{ marginTop: 30, alignItems: 'center', justifyContent: 'center' }}>
                                 <View style={{ width: Constants.LAYOUT.SCREEN_WIDTH - 40, height: 1, backgroundColor: Constants.COLOR.GRAY_DARK }} />
                                 <TouchableOpacity activeOpacity={1} style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, backgroundColor: Constants.COLOR.WHITE, position: 'absolute' }}>

@@ -24,9 +24,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function LogInScreen({ navigation }) {
     const { sessionStart } = React.useContext(AuthContext);
     const insets = useSafeAreaInsets()
-    const [phone, setPhone] = useState('')
-    // const [phone, setPhone] = useState('2063862134')
-    const [password, setPassword] = useState('')
+    // const [phone, setPhone] = useState('')
+    const [phone, setPhone] = useState('2347932760')
+    // const [password, setPassword] = useState('')
+    const [password, setPassword] = useState('123456Sjs!')
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         loadSavedPassword()
@@ -125,7 +126,7 @@ function LogInScreen({ navigation }) {
             }
             console.log('login', response.data.profile_completion);
         } catch (error) {
-            console.log('login', error,phone)
+            console.log('login error', error.code,error)
             setLoading(false)
             if (auth().currentUser !== null) {
                 auth().signOut().then(() => console.log('user signed out!'))
@@ -142,9 +143,9 @@ function LogInScreen({ navigation }) {
                 setTimeout(() => {
                     presentToastMessage({ type: 'success', position: 'top', message: "Your account has been deactivated." })
                 }, 100);
-            } else {
+            } else{
                 setTimeout(() => {
-                presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                presentToastMessage({ type: 'success', position: 'top', message: "Some problems occurred, please try again."})
                 }, 300);
             }
         }

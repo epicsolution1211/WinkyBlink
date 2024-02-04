@@ -19,7 +19,7 @@ export default {
     PREFERENCE_EDUCATION_LEVEL_OPTIONS: ["High School", "Trade/Tech School", "Undergraduate Degree", "Graduate Degree", "Continuing Education/In School"],
     PREFERENCE_POLITICAL_OPTIONS: ["Apolitical", "Moderate", "Liberal", "Conservative"],
     PREFERENCE_CULTURAL_BACKGROUND_OPTIONS: ["African American", "American Indian", "Asian", "Black", "Caribeean/Haitian", "Caucasian", "European", "Indian", "Hawaiian", "Latina/Hispanic", "Middle Eastern", "Mixed", "I like them all"],
-
+    REPORT_ISSUE_SUBJECT:["APP bug","Non-Conference"],
     KEY: {
         CHARS: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
         USER: 'mobile_user',
@@ -57,8 +57,8 @@ QUICKBLOX_APP_SETTINGS: {
 
     SERVER: {
         // URL: Platform.OS == 'ios' ? 'http://localhost/' : 'http://10.0.3.2/',
-        // URL: 'http://44.233.147.83/'
-        URL : 'http://192.168.118.138/'
+        URL: 'http://44.233.147.83/'
+        // URL : 'http://192.168.118.138/'
     },
 
     ANIMATION: {

@@ -34,6 +34,11 @@ function SwipeScreen({ navigation }) {
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
     const [undocount,setUndocount ] = useState(2);
+
+    const [plan, setPlan] = useState(null);
+    const [swipecount, setSwipecount] = useState(null);
+    const [useDate, setUseDate] = useState(null);
+
     var timeoutID = null
     useEffect(() => {
         if (page >= 0 && page <= 5) {
@@ -68,6 +73,15 @@ function SwipeScreen({ navigation }) {
             }
         }, [focused])
     );
+
+    useFocusEffect(
+        React.useCallback(() => {
+            loadAboutMe()
+          return () => {
+          };
+        }, [])
+    );
+
     const displaySwipeTutorial = async () => {
         AsyncStorage.getItem('SWIPE_TUTORIAL_DISPLAYED')
             .then(result => {
@@ -182,6 +196,62 @@ function SwipeScreen({ navigation }) {
             </View>
         )
     }
+
+    const loadAboutMe = async () => {
+        
+        try {
+            setLoading(true)
+            const response = await axios.get('apis/load_profile/', {
+                headers: {
+                    'Auth-Token': global.token
+                }
+            })
+            setPlan(response.data.user.subscribed_plan);
+            loadswipecount(response.data.user.subscribed_plan);
+            // console.log('user_info========>',response.data.user)
+            setLoading(false)
+        } catch (error) {
+            // console.log('load_profile', error)
+            setLoading(false)
+            setTimeout(() => {
+                presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+            }, 100);
+        }
+    }
+    const loadswipecount = async (subscribed_plan)=>{
+        
+        const storedCount = await AsyncStorage.getItem('usageCount');
+        const storedDate = await AsyncStorage.getItem('lastUsageDate');
+        const plan = await AsyncStorage.setItem('Plan',subscribed_plan);
+
+        const currentdate = new Date().toLocaleDateString();
+
+        if(subscribed_plan == "Basic"){
+            if(storedCount == null || storedDate != currentdate){
+                
+                await AsyncStorage.setItem('usageCount', '25');
+                await AsyncStorage.setItem('lastUsageDate', currentdate);
+                
+            }
+        }else if(subscribed_plan == "Premium"){
+            if(storedCount == null || storedDate != currentdate){
+                
+                await AsyncStorage.setItem('usageCount','150');
+                await AsyncStorage.setItem('lastUsageDate', currentdate);
+
+            }
+
+        }else if(subscribed_plan == "Plus"){
+
+        }
+    }
+    
+    // console.log(AsyncStorage.getItem('usageCount'),AsyncStorage.getItem('lastUsageDate'))
+    const saveswipecountdata = async (count,date)=>{
+
+    }
+
+    //loadswipeable user
     const loadSwipableUsers = async () => {
         try {
             const response = await axios.get('apis/load_swipeable_users/', {
@@ -190,11 +260,12 @@ function SwipeScreen({ navigation }) {
                 }
             })
             setUsers(response.data.users)
-            // console.log("swipeable" ,response.data);
+            // console.log("swipeable users===============>" ,response.data);
         } catch (error) {
             console.log('load_swipeable_users', JSON.stringify(error))
         }
     }
+    //active WinkyBadge
     const activateWinkyBadge = async () => {
         try {
             let parameters = {
@@ -222,6 +293,7 @@ function SwipeScreen({ navigation }) {
             }, 100);
         }
     }
+    //detect undo event
     const onUndoPress = () => {
 
         const opponent_id = swiperRef.current.currentprevecard().id;
@@ -234,7 +306,7 @@ function SwipeScreen({ navigation }) {
             console.log(undocount)
         }
     }
-
+    //Undo swipe
     const undoswipe = async (opponent_id) =>{
         try{
 
@@ -261,7 +333,7 @@ function SwipeScreen({ navigation }) {
             }, 100);
         }
     }
-
+    //user sends blast other user
     const onBlastsend = async (opponent_id) =>{
         swiperRef.current. _goToNextCard()
         if(undocount<2){
@@ -291,9 +363,16 @@ function SwipeScreen({ navigation }) {
             }, 100);
         }
     }
-
+    //detect swipe event
     const onSwipe = async ({ user, direction }) => {
-        increaseSwipeCountAndNeedCompatibility()
+        const swipecount = await AsyncStorage.getItem('usageCount');
+        const Plan = await AsyncStorage.getItem('Plan');
+        
+        // console.log(swipecount)
+        // console.log(plan)
+        if(parseInt(swipecount)>0 && Plan != 'Plus'){
+            await AsyncStorage.setItem('usageCount',(swipecount-1).toString());
+            increaseSwipeCountAndNeedCompatibility()
             .then((needCompatibility) => {
                 if (needCompatibility) {
                     navigation.navigate("NavigatorCompatiblityQuestions")
@@ -302,11 +381,18 @@ function SwipeScreen({ navigation }) {
             .catch((error) => {
                 console.log("increaseSwipe",error.code);
             })
-        if(direction == 'Left')
-            sendwink(user);
-        if(direction == 'Right'){
-            sendblink(user);
+
+            if(direction == 'Left')
+                sendwink(user);
+            if(direction == 'Right'){
+                sendblink(user);
+            }
+        }else{
+            setTimeout(() => {
+                presentToastMessage({ type: 'success', position: 'top', message:"You have already consume your swipe." })
+            }, 100);
         }
+        
     }
     //user send swipe(Wink) othere user 
     const sendwink = async (user) =>{
@@ -335,7 +421,7 @@ function SwipeScreen({ navigation }) {
             }, 100);
         }
     }
-
+    // user sends swipe(blink) other user
     const sendblink = async (user) =>{
         try{
             setLoading(true)
@@ -409,7 +495,7 @@ function SwipeScreen({ navigation }) {
                                 onBlastsend(user.id)
                             }}
                             onUpPress={() => {
-                                navigation.push('User', { id: user.id })
+                                navigation.push('User', { id: user.id ,usertype:'swipeable'})
                             }} />
                     }
                     renderNoMoreCards={() =>

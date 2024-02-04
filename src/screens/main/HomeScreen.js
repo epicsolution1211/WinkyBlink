@@ -40,7 +40,7 @@ import { useFocusEffect } from '@react-navigation/native';
 function HomeScreen({ navigation, route }) {
     const insets = useSafeAreaInsets()
     const [matches, setMatches] = useState([])
-    const [blasts, setBlasts] = useState([{ id: '0' }, { id: '1' }])
+    const [blasts, setBlasts] = useState([])
     const [page, setPage] = useState(9)
     const [dialogs, setDialogs] = useState([])
     const [loading, setLoading] = useState(false)
@@ -205,18 +205,18 @@ function HomeScreen({ navigation, route }) {
     }, []);
     
     //loat recent chatting history
-    // useFocusEffect(
-    //     React.useCallback(() => {
-    //         loadConversations()
-    //       return () => {
-    //       };
-    //     }, [])
-    // );
+    useFocusEffect(
+        React.useCallback(() => {
+            loadConversations()
+          return () => {
+          };
+        }, [])
+    );
 
-    useEffect(() => {
-        loadConversations()
-        return () => { };
-    }, []);
+    // useEffect(() => {
+    //     loadConversations()
+    //     return () => { };
+    // }, []);
 
     useEffect(() => {
         const emitter = new NativeEventEmitter(QB.chat);
@@ -231,7 +231,8 @@ function HomeScreen({ navigation, route }) {
         };
     }, []);
     const loadConversations = async () => {
-        const result = await QB.chat.getDialogs({})
+        const result = await QB.chat.getDialogs({limit:2})
+        // console.log(result)
         setDialogs(result.dialogs)
     }
     function receivedNewMessage(event) {
@@ -324,7 +325,7 @@ function HomeScreen({ navigation, route }) {
         } catch (error) {
             setLoading(false)
             setTimeout(() => {
-                presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                presentToastMessage({ type: 'success', position: 'top', message: "Some problems occurred, please try again." })
             }, 100);
         }
     }
@@ -343,7 +344,8 @@ function HomeScreen({ navigation, route }) {
         } catch (error) {
             setLoading(false)
             setTimeout(() => {
-                presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                // presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                presentToastMessage({ type: 'success', position: 'top', message: "Some problems occurred, please try again." })
             }, 100);
         }
     }
@@ -811,20 +813,20 @@ function HomeScreen({ navigation, route }) {
                             item={item}
                             index={index}
                             layout={'small'}
-                            onUserPress={() => navigation.push('User', {id:item.opponent_id})}
+                            onUserPress={() => navigation.push('User', {id:item.opponent_id,usertype:'match'})}
                             onMatchPress={() => {  }} /> :
                         section.id == 'Blast' ?
                             <BlastItem
                                 item={item}
                                 index={index}
                                 layout={'small'}
-                                onUserPress={() => navigation.push('User', {id:item.user_id})}
+                                onUserPress={() => navigation.push('User', {id:item.user_id,usertype:'blast'})}
                                 onBlastPress={() => { }} /> :
                             <ConversationItem
                                 item={item}
                                 index={index}
                                 layout={'small'}
-                                onUserPress={(userid) => navigation.push('User', {id:userid})}
+                                onUserPress={(userid) => navigation.push('User', {id:userid,usertype:'conversation'})}
                                 onConversationPress={
                                     (opponentQbID) => navigation.push('Conversation', { type: 'user', id: opponentQbID })
                                 } 

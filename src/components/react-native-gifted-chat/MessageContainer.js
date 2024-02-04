@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Avatar, Bubble, SystemMessage, Message, Day, MessageText, MessageImage, TouchableOpacity } from 'react-native-gifted-chat';
+// import {RNVoiceMessagePlayer} from 'react-native-voice-message-player';
+// import RNVoiceMessagePlayer from '@carchaze/react-native-voice-message-player';
+import { Avatar, Bubble, SystemMessage, Message, Day, MessageText, MessageImage,MessageAudio, TouchableOpacity } from 'react-native-gifted-chat';
 import moment from 'moment'
 import Constants from '../../common/Constants';
 
@@ -90,7 +92,9 @@ export const renderDay = (props) => (
     />
 );
 
-export const renderMessageText = (props) => (
+export const renderMessageText = (props) => 
+(
+    
     <MessageText
         {...props}
         containerStyle={{
@@ -140,6 +144,10 @@ export const renderMessageImage = (props) => (
             springConfig: { tension: 90000, friction: 90000 }
         }}
     />
+)
+
+export const renderMessageAudio = (props) => (
+    <MessageAudio {...props}/>
 )
 
 export const renderCustomView = (props) => {

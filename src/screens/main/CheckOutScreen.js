@@ -15,7 +15,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import StyledButton from '../../components/StyledButton';
 import NavigationHeaderSecondary from '../../components/NavigationHeaderSecondary';
 import SuccessModal from '../../components/SuccessModal';
-
+import axios from 'axios';
+import Spinner from '../../components/Spinner';
+import { getS3StorageURL, presentToastMessage } from '../../common/Functions';
 // //buy
 // import {
 //     isIosStorekit2,
@@ -39,10 +41,53 @@ import SuccessModal from '../../components/SuccessModal';
 function CheckOutScreen({ navigation, route }) {
     const insets = useSafeAreaInsets()
     const [visibleSuccessModal, setVisibleSuccessModal] = useState(false)
+    const [description, setDescription] = useState(route.params.description);
+    const [price,setPrice] = useState(route.params.price);
+    const [loading, setLoading] = useState(false);
     const onBackPress = () => navigation.goBack()
     const onHomePress = () => navigation.navigate('TabHome')
     const onMenuPress = () => navigation.openDrawer()
-    const onConfirmPress = () => setVisibleSuccessModal(true)
+    const onConfirmPress = async () =>{
+        if(description == 'WinkyBlasts'){
+            try{
+                setLoading(true);
+                axios.post('apis/buy_blast_user/',{
+                    'count':route.params.count
+                },{
+                    headers:{
+                        'Auth-Token':token
+                    }
+                })
+                setLoading(false);
+                setTimeout(() => {
+                    presentToastMessage({ type: 'success', position: 'top', message:"You have perchased successfully." })
+                }, 100);
+            }catch(error){
+                console.log('buy_blast err', JSON.stringify(error))
+                setLoading(false)
+                setTimeout(() => {
+                    presentToastMessage({ type: 'success', position: 'top', message: (error && error.response && error.response.data) ? error.response.data : "Some problems occurred, please try again." })
+                }, 100);
+            }
+        }
+        if(description == 'In-App Audio Chat'){
+            
+        }
+        if(description == 'Virtual Dates'){
+            
+        }
+        if(description == 'WinkBlinking'){
+            
+        }
+        if(description == 'Travel Mode'){
+            
+        }
+        if(description == 'Ghost Mode'){
+            
+        }
+        setVisibleSuccessModal(true)
+    
+    }
 
     //buy
     // const productsku = {sku:'kk'};
@@ -198,13 +243,13 @@ function CheckOutScreen({ navigation, route }) {
                 <Image style={{ width: 93, height: 69, borderRadius: 10, resizeMode: 'cover' }} source={require('../../../assets/images/img_virtual_dates.jpg')} />
                 <View style={{ flex: 1, paddingLeft: 15 }}>
                     <Text style={{ fontFamily: Constants.FONT_FAMILY.PRIMARY_REGULAR, fontSize: Constants.FONT_SIZE.FT22, color: Constants.COLOR.WHITE }}>
-                        {'WinkyBlinking'}
+                        {description}
                     </Text>
                     <Text style={{ marginTop: 4, fontFamily: Constants.FONT_FAMILY.PRIMARY_REGULAR, fontSize: Constants.FONT_SIZE.FT22, color: Constants.COLOR.WHITE }}>
-                        {'$5.99'}
+                        {'$'+price}
                     </Text>
                 </View>
-                <View style={{ height: 35, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 10, borderColor: Constants.COLOR.RED }}>
+                {/* <View style={{ height: 35, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 10, borderColor: Constants.COLOR.RED }}>
                     <TouchableOpacity style={{ width: 25, height: '100%', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ fontFamily: Constants.FONT_FAMILY.PRIMARY_DEMI, fontSize: Constants.FONT_SIZE.FT18, color: Constants.COLOR.RED }}>
                             {'-'}
@@ -220,7 +265,7 @@ function CheckOutScreen({ navigation, route }) {
                             {'+'}
                         </Text>
                     </TouchableOpacity>
-                </View>
+                </View> */}
             </View>
             <View style={{ width: '100%', marginTop: 35, height: 1, backgroundColor: Constants.COLOR.GRAY_SEPERATOR }} />
             <View style={{ width: '100%', marginTop: 15, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -228,7 +273,7 @@ function CheckOutScreen({ navigation, route }) {
                     {'Subtotal'}
                 </Text>
                 <Text style={{ fontFamily: Constants.FONT_FAMILY.PRIMARY_REGULAR, fontSize: Constants.FONT_SIZE.FT22, color: Constants.COLOR.WHITE }}>
-                    {'$5.99'}
+                    {'$'+price}
                 </Text>
             </View>
             <View style={{ width: '100%', marginTop: 10, marginBottom: 15, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -245,7 +290,7 @@ function CheckOutScreen({ navigation, route }) {
                     {'Total'}
                 </Text>
                 <Text style={{ fontFamily: Constants.FONT_FAMILY.PRIMARY_BOLD, fontSize: Constants.FONT_SIZE.FT22, color: Constants.COLOR.WHITE }}>
-                    {'$5.00'}
+                    {'$'+(price-0.99)}
                 </Text>
             </View>
             <View style={{ width: '100%', height: 1, backgroundColor: Constants.COLOR.GRAY_SEPERATOR }} />
