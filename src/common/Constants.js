@@ -57,8 +57,8 @@ QUICKBLOX_APP_SETTINGS: {
 
     SERVER: {
         // URL: Platform.OS == 'ios' ? 'http://localhost/' : 'http://10.0.3.2/',
-        URL: 'http://44.233.147.83/'
-        // URL : 'http://192.168.118.138/'
+        // URL: 'http://44.233.147.83/'
+        URL : 'http://192.168.118.138/'
     },
 
     ANIMATION: {

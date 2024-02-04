@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
+    Alert,
     Image,
     Platform,
     StatusBar,
@@ -207,8 +208,8 @@ function SwipeScreen({ navigation }) {
                 }
             })
             setPlan(response.data.user.subscribed_plan);
-            loadswipecount(response.data.user.subscribed_plan);
-            // console.log('user_info========>',response.data.user)
+            loadswipecount(response.data.user.subscribed_plan,response.data.user.current_date);
+            console.log('user_info========>',response.data.user.current_date)
             setLoading(false)
         } catch (error) {
             // console.log('load_profile', error)
@@ -218,26 +219,27 @@ function SwipeScreen({ navigation }) {
             }, 100);
         }
     }
-    const loadswipecount = async (subscribed_plan)=>{
+    // AsyncStorage.setItem('usageCount', '25');
+    const loadswipecount = async (subscribed_plan, current_date)=>{
         
         const storedCount = await AsyncStorage.getItem('usageCount');
         const storedDate = await AsyncStorage.getItem('lastUsageDate');
         const plan = await AsyncStorage.setItem('Plan',subscribed_plan);
-
+        
         const currentdate = new Date().toLocaleDateString();
 
         if(subscribed_plan == "Basic"){
-            if(storedCount == null || storedDate != currentdate){
+            if(storedCount == null || storedDate != current_date){
                 
                 await AsyncStorage.setItem('usageCount', '25');
-                await AsyncStorage.setItem('lastUsageDate', currentdate);
+                await AsyncStorage.setItem('lastUsageDate', current_date);
                 
             }
         }else if(subscribed_plan == "Premium"){
-            if(storedCount == null || storedDate != currentdate){
+            if(storedCount == null || storedDate != current_date){
                 
-                await AsyncStorage.setItem('usageCount','150');
-                await AsyncStorage.setItem('lastUsageDate', currentdate);
+                await AsyncStorage.setItem('usageCount','25');
+                await AsyncStorage.setItem('lastUsageDate', current_date);
 
             }
 
@@ -246,7 +248,6 @@ function SwipeScreen({ navigation }) {
         }
     }
     
-    // console.log(AsyncStorage.getItem('usageCount'),AsyncStorage.getItem('lastUsageDate'))
     const saveswipecountdata = async (count,date)=>{
 
     }
@@ -368,8 +369,6 @@ function SwipeScreen({ navigation }) {
         const swipecount = await AsyncStorage.getItem('usageCount');
         const Plan = await AsyncStorage.getItem('Plan');
         
-        // console.log(swipecount)
-        // console.log(plan)
         if(parseInt(swipecount)>0 && Plan != 'Plus'){
             await AsyncStorage.setItem('usageCount',(swipecount-1).toString());
             increaseSwipeCountAndNeedCompatibility()
@@ -398,18 +397,18 @@ function SwipeScreen({ navigation }) {
     const sendwink = async (user) =>{
         try{
             setLoading(true)
-            await axios.post('apis/swipe_wink_user/',
-                {
-                    "opponent_id":user.id,
-                    "type":"Wink",
-                    "user_id":0
-                },
-                {
-                    headers: {
-                        'Auth-Token': token
-                    }
-                }
-            )
+            // await axios.post('apis/swipe_wink_user/',
+            //     {
+            //         "opponent_id":user.id,
+            //         "type":"Wink",
+            //         "user_id":0
+            //     },
+            //     {
+            //         headers: {
+            //             'Auth-Token': token
+            //         }
+            //     }
+            // )
             // console.log("sendswipe-try", response.data);
             setLoading(false);
             presentToastMessage({ type: 'success', position: 'top', message: "You swiped Wink succesfully." })
@@ -425,19 +424,19 @@ function SwipeScreen({ navigation }) {
     const sendblink = async (user) =>{
         try{
             setLoading(true)
-            response =  await axios.post('apis/swipe_blink_user/',
-                {
-                    "opponent_id":user.id,
-                    "type":"Blink",
-                    "user_id":0
-                },
-                {
-                    headers: {
-                        'Auth-Token': token
-                    }
-                }
-            )
-            console.log("sendswipe-try", response.data);
+            // response =  await axios.post('apis/swipe_blink_user/',
+            //     {
+            //         "opponent_id":user.id,
+            //         "type":"Blink",
+            //         "user_id":0
+            //     },
+            //     {
+            //         headers: {
+            //             'Auth-Token': token
+            //         }
+            //     }
+            // )
+            // console.log("sendswipe-try", response.data);
             setLoading(false);
             presentToastMessage({ type: 'success', position: 'top', message: "You swiped Blink succesfully." })
         } catch (error){

@@ -525,7 +525,7 @@ function ConversationScreen({ navigation, route }) {
                 },
                 // markAsRead:true,
                 // skip: 10,
-                limit:limit,
+                limit:10,
                 markAsRead: true
             })
             setLimit(limit+10)

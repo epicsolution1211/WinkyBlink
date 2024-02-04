@@ -20,7 +20,6 @@ import QB from 'quickblox-react-native-sdk';
 import DeviceInfo, { isEmulator } from 'react-native-device-info';
 import auth from "@react-native-firebase/auth";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 function LogInScreen({ navigation }) {
     const { sessionStart } = React.useContext(AuthContext);
     const insets = useSafeAreaInsets()

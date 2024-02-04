@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 // import {RNVoiceMessagePlayer} from 'react-native-voice-message-player';
 // import RNVoiceMessagePlayer from '@carchaze/react-native-voice-message-player';
-import { Avatar, Bubble, SystemMessage, Message, Day, MessageText, MessageImage,MessageAudio, TouchableOpacity } from 'react-native-gifted-chat';
+import { Avatar, Bubble, SystemMessage, Message, Day, MessageText, MessageImage, TouchableOpacity } from 'react-native-gifted-chat';
 import moment from 'moment'
 import Constants from '../../common/Constants';
 
@@ -146,9 +146,9 @@ export const renderMessageImage = (props) => (
     />
 )
 
-export const renderMessageAudio = (props) => (
-    <MessageAudio {...props}/>
-)
+// export const renderMessageAudio = (props) => (
+//     <MessageAudio {...props}/>
+// )
 
 export const renderCustomView = (props) => {
     return null
