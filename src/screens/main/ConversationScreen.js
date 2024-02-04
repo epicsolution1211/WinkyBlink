@@ -90,6 +90,8 @@ function ConversationScreen({ navigation, route }) {
     const [visibleBlockModal, setVisibleBlockModal] = useState(false)
     const [visiblePhotoOptions, setVisiblePhotoOptions] = useState(false)
     // const [userphoto, setUserphoto] = useState();
+    const [limit,setLimit] = useState(10);
+
     const [user, setUser] = useState(null)
     const [dialog, setDialog] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -97,7 +99,7 @@ function ConversationScreen({ navigation, route }) {
     const messageInputBarRef = useRef()
     const [messages, setMessages] = useState([])
     const [text, setText] = useState('')
-    const [loadEarlier, setLoadEarlier] = useState(false)
+    const [loadEarlier, setLoadEarlier] = useState(true)
     const [keyboardHeight, setKeyboardHeight] = useState(0)
     const [focused, setFocused] = useState(false)
     const [currentmessage, setCurrentmessage] = useState();
@@ -114,7 +116,6 @@ function ConversationScreen({ navigation, route }) {
     let userphoto;
     const [recordingPosition, setRecordingPosition] = useState('00:00');
     const [recording,setRecording] = useState(false);
-
 
         // const PlayButton = () => {
         //     return ( 
@@ -166,7 +167,7 @@ function ConversationScreen({ navigation, route }) {
                 <View
                     style={{
                         backgroundColor: parseInt(currentMessage.user["_id"]) === parseInt(route.params.id) ? '#F2F2F2' : '#A6E1E4',
-                        width:'100%',
+                        width:150,
                         borderTopRightRadius:13,
                         borderTopLeftRadius:9,
                         borderBottomLeftRadius:11,
@@ -399,7 +400,7 @@ function ConversationScreen({ navigation, route }) {
 
 
     useEffect(() => {
-        dialog !== null && loadChatHistory(0)
+        dialog !== null && loadChatHistory(limit)
         return () => { };
     }, [dialog]);
 
@@ -512,9 +513,10 @@ function ConversationScreen({ navigation, route }) {
     }
 
     //load chatting history
-    const loadChatHistory = async (skip) => {
+    const loadChatHistory = async (limit) => {
         try {
             //get chat log 
+            setLoading(true)
             const result = await QB.chat.getDialogMessages({
                 dialogId: dialog.id,
                 sort: {
@@ -522,9 +524,11 @@ function ConversationScreen({ navigation, route }) {
                     field: QB.chat.MESSAGES_SORT.FIELD.DATE_SENT
                 },
                 // markAsRead:true,
-                skip: skip,
+                // skip: 10,
+                limit:limit,
                 markAsRead: true
             })
+            setLimit(limit+10)
             // geturl()
             //change message state
             // setMessages(result.messages.map(item => {
@@ -591,9 +595,11 @@ function ConversationScreen({ navigation, route }) {
 
                 };
             }));
-    
+            setLoading(false)
             setMessages(messages);
+            console.log("message======>",messages.length)
         } catch (error) {
+            setLoading(false)
             console.log("load chat history error",error)
             setTimeout(() => {
                 presentToastMessage({ type: 'success', position: 'top', message: "Some problems occurred, please try again." })
@@ -982,7 +988,7 @@ function ConversationScreen({ navigation, route }) {
                                 isKeyboardInternallyHandled={false}
                                 text={text}
                                 onInputTextChanged={setText}
-                                onLoadEarlier={() => loadChatHistory(messages.length)}
+                                onLoadEarlier={() => loadChatHistory(limit)}
                                 user={{
                                     _id: global.qb_id,
                                 }}

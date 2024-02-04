@@ -24,10 +24,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function LogInScreen({ navigation }) {
     const { sessionStart } = React.useContext(AuthContext);
     const insets = useSafeAreaInsets()
-    // const [phone, setPhone] = useState('')
-    const [phone, setPhone] = useState('2347932760')
-    // const [password, setPassword] = useState('')
-    const [password, setPassword] = useState('123456Sjs!')
+    const [phone, setPhone] = useState('')
+    // const [phone, setPhone] = useState('2347932760')
+    const [password, setPassword] = useState('')
+    // const [password, setPassword] = useState('123456Sjs!')
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         loadSavedPassword()
