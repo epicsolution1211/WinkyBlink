@@ -15,6 +15,7 @@ import Spinner from '../../components/Spinner';
 import { presentToastMessage } from '../../common/Functions';
 import FeatureItem from '../../components/FeatureItem';
 import { useFocusEffect } from '@react-navigation/native';
+import moment from 'moment';
 
 function FeatureSettingsScreen({ navigation, route }) {
     const insets = useSafeAreaInsets()
@@ -30,6 +31,13 @@ function FeatureSettingsScreen({ navigation, route }) {
     const [winkyBlastsNotificationEnabled, setWinkyBlastsNotificationEnabled] = useState(false)
     const [speedDatingNotificationEnabled, setSpeedDatingNotificationEnabled] = useState(false)
     const [virtualDateNotificationEnabled, setVirtualDateNotificationEnabled] = useState(false)
+    const [subscribedplan,setSubscribedplan] = useState('');
+    const [audiochatsubscribeddate,setAudiochatsubscribeddate] = useState('');
+    const [winkyblinksubscribeddate,setWinkyblinksubscribeddate] = useState('');
+    const [travelmodesubscribeddate,setTravelmodesubscribeddate] = useState('');
+    const [ghostmodesubscribeddate, setGhostmodeSubscribeddate] = useState('');
+    const [currentdate,setCurrentdate] = useState('');
+
     // useEffect(() => {
     //     loadFeatureSettings()
     //     return () => { }
@@ -51,8 +59,8 @@ function FeatureSettingsScreen({ navigation, route }) {
                 headers: {
                     'Auth-Token': global.token
                 }
-            })
-            console.log(response.data.user.preferences.distance_min)
+            });
+            
             setFlexGPSRange({ low: parseInt(response.data.user.preferences.distance_min), high: parseInt(response.data.user.preferences.distance_max) })
             setFlexGPSEnabled(response.data.user.is_flex_gps_enabled === '1')
             setGhostModeEnabled(response.data.user.is_ghost_mode_enabled === '1')
@@ -63,9 +71,14 @@ function FeatureSettingsScreen({ navigation, route }) {
             setWinkyBlastsNotificationEnabled(response.data.user.is_notification_winkyblasts_enabled === '1')
             setSpeedDatingNotificationEnabled(response.data.user.is_notification_speed_dating_enabled === '1')
             setVirtualDateNotificationEnabled(response.data.user.is_notification_virtual_dates_enabled === '1')
+            setSubscribedplan(response.data.user.subscribed_plan)
+            setCurrentdate(response.data.user.current_date);
+            setTravelmodesubscribeddate(response.data.user.travel_mode_subscribed_date);
+            setWinkyblinksubscribeddate(response.data.user.subscribed_date);
+            setGhostmodeSubscribeddate(response.data.user.ghost_mode_subscribed_date);
+
             setLoading(false)
             setLoaded(true)
-            console.log(flexGPSRange);
         } catch (error) {
             console.log('load_profile', JSON.stringify(error))
             setLoading(false)
@@ -146,19 +159,90 @@ function FeatureSettingsScreen({ navigation, route }) {
                                 !flexGPSEnabled &&
                                 <FeatureItem item={{ title: 'Flex GPS', value: flexGPSRange }} onValueChange={({high,low}) => { setFlexGPSRange({high,low }) }}/>
                             }
-                            <FeatureItem item={{ title: 'Ghost Mode', value: ghostModeEnabled }} onValueChange={(value) => setGhostModeEnabled(value)} />
-                            <FeatureItem item={{ title: 'Travel Mode', value: travelModeEnabled }} onValueChange={(value) => setTravelModeEnabled(value)} />
-                            <FeatureItem item={{ title: 'Display Winky Badge', value: winkyBadgeEnabled }} onValueChange={(value) => setWinkyBadgeEnabled(value)} />
+                            <FeatureItem 
+                                item={{ title: 'Ghost Mode', value: ghostModeEnabled }} 
+                                onValueChange={
+                                    (value) => {                                    
+                                        if(subscribedplan=='Basic'){
+                                            presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                        }else if(subscribedplan=='Plus' && moment(currentdate,'YYYY-MM-DD').isAfter(moment(ghostmodesubscribeddate,'YYYY-MM-DD').add(1, 'months'))){
+                                            presentToastMessage({ type: 'success', position: 'top', message: "Please buy ghost mode in store" })
+                                        }else if(subscribedplan == 'Premium'){
+                                            setGhostModeEnabled(value)
+                                        }
+                                    }
+                                }
+                            />
+                            <FeatureItem 
+                                item={{ title: 'Travel Mode', value: travelModeEnabled }} 
+                                onValueChange={
+                                    (value) => {
+                                        if(subscribedplan=='Basic'){
+                                            presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                        }else if(subscribedplan=='Plus' && moment(currentdate,'YYYY-MM-DD').isAfter(moment(travelmodesubscribeddate,'YYYY-MM-DD').add(1, 'months'))){
+                                            presentToastMessage({ type: 'success', position: 'top', message: "Please buy ghost mode in store" })
+                                        }else if(subscribedplan == 'Premium'){
+                                            setTravelModeEnabled(value)
+                                        }
+                                    }
+                                } 
+                            />
+                            <FeatureItem 
+                                item={{ title: 'Display Winky Badge', value: winkyBadgeEnabled }} 
+                                onValueChange={
+                                    (value) => {
+                                        if(subscribedplan=='Basic'){
+                                            presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                        }else {
+                                            setWinkyBadgeEnabled(value)
+                                        }
+                                    }
+                                } 
+                            />
                         </View>
                         <Text style={{ alignSelf: 'flex-start', marginStart: 20, marginTop: 40, marginBottom: 20, fontFamily: Constants.FONT_FAMILY.PRIMARY_BOLD, fontSize: Constants.FONT_SIZE.FT28, color: Constants.COLOR.WHITE }}>
                             {'Notifications'}
                         </Text>
                         <View>
-                            <FeatureItem item={{ title: 'Promotional', value: promotionalNotificationEnabled }} onValueChange={(value) => setPromotionalNotificationEnabled(value)} />
-                            <FeatureItem item={{ title: 'Message Notification', value: messageNotificationEnabled }} onValueChange={(value) => setMessageNotificationEnabled(value)} />
-                            <FeatureItem item={{ title: 'WinkyBlasts', value: winkyBlastsNotificationEnabled }} onValueChange={(value) => setWinkyBlastsNotificationEnabled(value)} />
-                            <FeatureItem item={{ title: 'Speed Dating', value: speedDatingNotificationEnabled }} onValueChange={(value) => setSpeedDatingNotificationEnabled(value)} />
-                            <FeatureItem item={{ title: 'Virtual Dates', value: virtualDateNotificationEnabled }} onValueChange={(value) => setVirtualDateNotificationEnabled(value)} />
+                            <FeatureItem 
+                                item={{ title: 'Promotional', value: promotionalNotificationEnabled }} 
+                                onValueChange={(value) => setPromotionalNotificationEnabled(value)} />
+                            <FeatureItem 
+                                item={{ title: 'Message Notification', value: messageNotificationEnabled }} 
+                                onValueChange={(value) => {
+                                    if(subscribedplan=='Basic'){
+                                        presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                    }else{
+                                        setMessageNotificationEnabled(value)
+                                    }
+                                    }} />
+                            <FeatureItem 
+                                item={{ title: 'WinkyBlasts', value: winkyBlastsNotificationEnabled }} 
+                                onValueChange={(value) => {
+                                    if(subscribedplan=='Basic'){
+                                        presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                    }else{
+                                        setWinkyBlastsNotificationEnabled(value)
+                                    }
+                                    }} />
+                            <FeatureItem 
+                                item={{ title: 'Speed Dating', value: speedDatingNotificationEnabled }} 
+                                onValueChange={(value) => {
+                                    if(subscribedplan=='Basic'){
+                                        presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                    }else{
+                                        setSpeedDatingNotificationEnabled(value)
+                                    }
+                                    }} />
+                            <FeatureItem 
+                                item={{ title: 'Virtual Dates', value: virtualDateNotificationEnabled }} 
+                                onValueChange={(value) => {
+                                    if(subscribedplan=='Basic'){
+                                        presentToastMessage({ type: 'success', position: 'top', message: "You can't enable this feature in plan you selected." })
+                                    }else{
+                                        setVirtualDateNotificationEnabled(value)
+                                    }
+                                }} />
                         </View>
                         <StyledButton
                             containerStyle={{ marginTop: 30, alignSelf: 'center' }}

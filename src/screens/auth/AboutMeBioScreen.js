@@ -27,7 +27,7 @@ import 'react-native-get-random-values'
 import 'react-native-url-polyfill/auto'
 import Video from 'react-native-video';
 
-function AboutMeBioScreen({ navigation }) {
+function AboutMeBioScreen({ navigation,route }) {
     const insets = useSafeAreaInsets()
     const [funFactAboutMe, setFunFactAboutMe] = useState('')
     const [video, setVideo] = useState(null)
@@ -107,7 +107,7 @@ function AboutMeBioScreen({ navigation }) {
             })
             setLoading(false)
             setTimeout(() => {
-                navigation.push("AboutMePhoto")
+                navigation.push("AboutMePhoto",{plan:route.params.plan})
             }, 100);
         } catch (error) {
             console.log('update_user', JSON.stringify(error))

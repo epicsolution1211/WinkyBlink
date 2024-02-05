@@ -12,9 +12,9 @@ import NavigationHeaderPrimary from '../../components/NavigationHeaderPrimary';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import StyledButton from '../../components/StyledButton';
 
-function CreateProfileScreen({ navigation }) {
+function CreateProfileScreen({ navigation,route }) {
     const insets = useSafeAreaInsets()
-    const onNextPress = () => navigation.push("AboutMe")
+    const onNextPress = () => navigation.push("AboutMe",{plan:route.params.plan})
     const onBackPress = () => navigation.pop()
     return (
         <View style={{ flex: 1, backgroundColor: Constants.COLOR.SECONDARY }} >

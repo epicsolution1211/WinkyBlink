@@ -25,11 +25,27 @@ function PlanDetailScreen({ navigation, route }) {
         saveUserSubscription()
     }
     const saveUserSubscription = async () => {
-        try {
-            let parameters = {
+        let parameters;
+        if(route.params.id=='Basic'){
+            parameters = {
                 'subscribed_plan': route.params.plan.id,
                 'subscribed_date': moment().format('YYYY-MM-DD HH:mm:ss')
             }
+        }else if(route.params.id=='Plus'){
+            parameters = {
+                'subscribed_plan': route.params.plan.id,
+                'winkyblast_count': 5,
+                'subscribed_date': moment().format('YYYY-MM-DD HH:mm:ss')
+            }
+        }else if(route.params.id=='Premium'){
+            parameters = {
+                'subscribed_plan': route.params.plan.id,
+                'winkyblast_count': 20,
+                'subscribed_date': moment().format('YYYY-MM-DD HH:mm:ss')
+            }
+        }
+
+        try {
             var body = [];
             for (let property in parameters) {
                 let encodedKey = encodeURIComponent(property);
@@ -45,7 +61,7 @@ function PlanDetailScreen({ navigation, route }) {
             })
             setLoading(false)
             setTimeout(() => {
-                navigation.push("CreateProfile")
+                navigation.push("CreateProfile",{plan:route.params.plan.id})
             }, 100);
         } catch (error) {
             console.log('update_user', JSON.stringify(error))
